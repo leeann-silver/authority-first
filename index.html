@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authority First | AI Citation Visibility for B2B Brands</title>
+  <meta name="description" content="Become the source AI recommends. We build the credibility signals that determine whether your brand is included in AI-generated answers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2d5a;
+      --gold: #c9a558;
+      --white: #fafaf8;
+      --mid: #5a6a8a;
+      --border: #d8d4cc;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .logo-icon { height: 32px; width: auto; flex-shrink: 0; display: block; }
+    .logo-icon--sm { height: 24px; }
+    .logo-icon--lg { height: 64px; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .logo-wordmark em { font-style: italic; color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white) !important;
+      background: var(--navy);
+      padding: 0.6rem 1.4rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.8; }
+
+    /* ── BRAND INTRO ── */
+    .brand-intro {
+      padding: 8rem 4rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand-intro-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .brand-wordmark {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+    .brand-wordmark em { display: block; font-style: italic; color: var(--gold); }
+
+    .brand-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 4rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      margin-bottom: 3rem;
+    }
+    .hero-headline em { font-style: italic; font-weight: 300; }
+
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-left { flex: 1; }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 52ch;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--navy);
+      padding: 0.85rem 2rem;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.8; }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 3rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      display: block;
+      color: var(--gold);
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .scroll-line {
+      position: absolute;
+      bottom: 0;
+      left: 4rem;
+      width: 1px;
+      height: 60px;
+      background: var(--gold);
+      animation: growLine 1.4s ease-out 0.8s both;
+    }
+    @keyframes growLine {
+      from { transform: scaleY(0); transform-origin: top; }
+      to   { transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* ── SECTION SHARED ── */
+    section { padding: 7rem 4rem; }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-tag::after {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* ── PROBLEM (dark) ── */
+    #problem {
+      background: var(--navy);
+      color: var(--white);
+    }
+    #problem .section-tag { color: #888; }
+    #problem .section-tag::after { background: #888; }
+
+    .problem-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      max-width: 28ch;
+    }
+    .problem-headline em { font-style: italic; color: var(--gold); }
+
+    .problem-para {
+      font-size: 1rem;
+      color: #bbb;
+      line-height: 1.8;
+      max-width: 62ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .problem-conclusion {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      font-weight: 300;
+      color: var(--gold);
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      margin-top: 2.5rem;
+      font-style: italic;
+      max-width: 54ch;
+    }
+
+    /* ── WHY / OPPORTUNITY (two-col grid) ── */
+    #why, #opportunity {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .why-left { position: sticky; top: 6rem; }
+
+    .why-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      max-width: 18ch;
+    }
+    .why-headline em { font-style: italic; }
+
+    .why-opener {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-body {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .why-pivot {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.3;
+      margin: 1.5rem 0;
+    }
+
+    .why-list {
+      list-style: none;
+      margin: 0.5rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .why-list li {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .why-list li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+
+    .why-conclusion {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* ── FRAMEWORK ── */
+    #framework { border-bottom: 1px solid var(--border); }
+
+    .framework-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 5rem;
+    }
+
+    .framework-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .framework-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .framework-headline em { font-style: italic; }
+
+    .framework-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 44ch;
+      line-height: 1.7;
+      align-self: end;
+    }
+
+    .framework-flow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+    }
+    .framework-flow-step {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(201,165,88,0.12);
+      border: 1px solid rgba(201,165,88,0.35);
+      padding: 0.5rem 1rem;
+    }
+    .framework-flow-arrow { color: var(--gold); font-size: 1rem; font-weight: 300; flex-shrink: 0; }
+
+    .framework-phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .phase {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--border);
+      cursor: default;
+      transition: background 0.2s;
+    }
+    .phase:last-child { border-right: none; }
+    .phase:not(:first-child) { padding-left: 2rem; }
+    .phase:hover { background: #eef1f8; }
+
+    .phase-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-name {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .phase-outcome {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .phase-divider {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .phase-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* ── WHY THIS WORKS ── */
+    #why-it-works { border-bottom: 1px solid var(--border); }
+
+    /* ── MEASURE ── */
+    #measure { border-bottom: 1px solid var(--border); }
+
+    .measure-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    .measure-metric {
+      padding: 2.5rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .measure-metric-name {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .measure-metric-desc {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    .measure-method {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.75;
+      max-width: 62ch;
+      font-style: italic;
+    }
+
+    /* ── PRICING ── */
+    #pricing { border-bottom: 1px solid var(--border); }
+
+    .pricing-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .pricing-headline em { font-style: italic; }
+
+    .pricing-note {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.7;
+      align-self: end;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .plan {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--border);
+    }
+    .plan:last-child { border-right: none; }
+    .plan:not(:first-child) { padding-left: 2rem; }
+
+    .plan.featured {
+      background: var(--navy);
+      color: var(--white);
+      padding: 2.5rem;
+      margin: -1px;
+    }
+
+    .plan-tag {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .plan.featured .plan-tag { color: rgba(201,165,88,0.8); }
+
+    .plan-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .plan.featured .plan-name { color: var(--white); }
+
+    .plan-subtitle {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+    .plan.featured .plan-subtitle { color: rgba(201,165,88,0.85); }
+
+    .plan-period {
+      font-size: 0.78rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.75rem;
+    }
+    .plan.featured .plan-period { color: #888; }
+
+    .plan-divider {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1.75rem;
+    }
+    .plan.featured .plan-divider { background: var(--gold); }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .plan-feature {
+      font-size: 0.86rem;
+      color: var(--mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+    .plan.featured .plan-feature { color: #bbb; }
+    .plan-feature::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+    .plan.featured .plan-feature::before { color: rgba(201,165,88,0.7); }
+
+    .plan-results-note {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .plan.featured .plan-results-note { color: #aaa; border-top-color: rgba(250,250,248,0.1); }
+
+    .plan-btn {
+      display: block;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      transition: all 0.2s;
+    }
+    .plan-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .plan.featured .plan-btn { background: var(--white); color: var(--navy); border-color: var(--white); }
+    .plan.featured .plan-btn:hover { background: transparent; color: var(--white); border-color: #888; }
+
+    .pricing-fit {
+      border-top: 1px solid var(--border);
+      padding-top: 3.5rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .pricing-fit-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-fit-body {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      max-width: 44ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    /* ── FAQ ── */
+    #faq { border-bottom: 1px solid var(--border); }
+
+    .faq-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+
+    .faq-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .faq-headline em { font-style: italic; }
+
+    .faq-desc { font-size: 1rem; color: var(--mid); align-self: end; line-height: 1.7; }
+
+    .faq-list { border-top: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.75rem 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--gold); }
+
+    .faq-icon {
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+      line-height: 1;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-answer { max-height: 3000px; }
+    .faq-answer-inner { padding-bottom: 2.5rem; }
+
+    .faq-answer p { font-size: 0.93rem; color: var(--mid); line-height: 1.8; margin-bottom: 1rem; }
+    .faq-answer p:last-child { margin-bottom: 0; }
+    .faq-answer ul { list-style: none; margin: 0.75rem 0 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .faq-answer ul li { font-size: 0.9rem; color: var(--mid); line-height: 1.65; display: flex; align-items: baseline; gap: 0.6rem; }
+    .faq-answer ul li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+    .faq-answer strong { color: var(--navy); font-weight: 500; }
+
+    .faq-cta {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+    .faq-cta p { font-size: 0.95rem; color: var(--mid); line-height: 1.7; max-width: 50ch; }
+    .faq-cta-btn {
+      flex-shrink: 0;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      background: var(--navy);
+      color: var(--white);
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .faq-cta-btn:hover { opacity: 0.8; }
+
+    /* ── WHO ── */
+    #who { border-bottom: 1px solid var(--border); }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .who-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+    .who-headline em { font-style: italic; }
+    .who-headline--muted { color: var(--mid); }
+
+    .who-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .who-list li {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .who-list li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+    .who-list--not li::before { content: '×'; color: var(--border); }
+
+    .who-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { border-bottom: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      position: sticky;
+      top: 6rem;
+      padding: 4rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+    .about-photo img { width: 100%; display: block; filter: grayscale(10%); }
+
+    .about-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+    .about-headline em { font-style: italic; }
+
+    .about-bio {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-bio--strong {
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    .about-cta-block {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-cta-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 6rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .cta-headline em { font-style: italic; }
+
+    .cta-right { display: flex; flex-direction: column; gap: 2rem; }
+
+    .cta-sub { font-size: 1rem; color: var(--mid); line-height: 1.7; }
+
+    .cta-form { display: flex; flex-direction: column; gap: 0; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+
+    .form-field { position: relative; }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 1rem 1rem 0.8rem;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: var(--navy); position: relative; z-index: 1; }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #aaa; }
+    .form-field textarea { resize: none; min-height: 100px; }
+    .form-field.full { grid-column: 1 / -1; }
+
+    .form-submit {
+      display: block;
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: -1px;
+    }
+    .form-submit:hover { opacity: 0.8; }
+
+    /* ── FOOTER ── */
+    footer {
+      padding: 3rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .footer-left { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+      max-width: 38ch;
+      font-style: italic;
+    }
+
+    .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--navy); }
+
+    .footer-instagram a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-instagram a:hover { color: var(--navy); }
+
+    .footer-copy { font-size: 0.72rem; color: var(--mid); letter-spacing: 0.05em; }
+
+    /* ── MOBILE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      #hero { padding: 0 1.5rem 4rem; }
+      .brand-intro { padding: 7rem 1.5rem 3rem; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-stat-row { text-align: left; }
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .why-left { position: static; }
+      .framework-phases { grid-template-columns: 1fr; }
+      .phase { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+      .phase:not(:first-child) { padding-left: 0; }
+      .pricing-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .plan { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+      .plan:not(:first-child) { padding-left: 0; }
+      .plan.featured { margin: 0; padding: 2rem; }
+      .measure-grid { grid-template-columns: 1fr; }
+      .faq-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+      .faq-cta { flex-direction: column; align-items: flex-start; }
+      .who-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photo { position: static; }
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 2rem 1.5rem; }
+      .footer-right { align-items: flex-start; }
+      .footer-links { justify-content: flex-start; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250%22%20y2%3D%2213%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2282%22%20y2%3D%2231.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2282%22%20y2%3D%2268.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250%22%20y2%3D%2287%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2218%22%20y2%3D%2268.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2218%22%20y2%3D%2231.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2213%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2231.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2268.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2287%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2268.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2231.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2215%22%20fill%3D%22%23c9a558%22%2F%3E%3C%2Fsvg%3E">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+      <span class="logo-wordmark">Authority<em>First</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why It Matters</a></li>
+      <li><a href="#framework">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get Your Authority Audit</a></li>
+    </ul>
+  </nav>
+
+  <!-- BRAND INTRO -->
+  <div class="brand-intro">
+    <div class="brand-intro-inner">
+      <svg class="logo-icon logo-icon--lg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+      <p class="brand-wordmark">Authority<em>First</em></p>
+      <p class="brand-tagline">Become the source AI recommends.</p>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="scroll-line"></div>
+    <p class="hero-eyebrow fade-in">AI Authority Infrastructure</p>
+    <h1 class="hero-headline fade-in">
+      Become the Source<br /><em>AI Recommends.</em>
+    </h1>
+    <div class="hero-bottom fade-in">
+      <div class="hero-left">
+        <p class="hero-sub">
+          When buyers ask AI who to trust in your category, your brand either gets named or it does not. We create the credibility signals that determine whether you are included in the answer.
+        </p>
+        <a href="#contact" class="hero-cta">See Where You Stand</a>
+      </div>
+      <div class="hero-stat-row">
+        <div>
+          <span class="hero-stat-num">90</span>
+          <span class="hero-stat-label">Days to positioned authority</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-label">AI models tracked weekly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT CHANGED -->
+  <section id="problem">
+    <p class="section-tag">What Changed</p>
+    <h2 class="problem-headline fade-in">
+      Google rankings used to decide visibility.<br /><em>AI systems do now.</em>
+    </h2>
+    <p class="problem-para fade-in">Buyers are skipping search results. They are asking AI systems for direct recommendations and acting on what they get.</p>
+    <p class="problem-para fade-in">ChatGPT, Perplexity, Claude, and Google AI do not return ten options. They return a small set of trusted brands. Everyone else is excluded.</p>
+    <p class="problem-para fade-in">More content does not change this. AI systems do not reward activity. They reward credibility.</p>
+    <p class="problem-conclusion fade-in">You do not need more content. You need to be recognized as a source worth trusting.</p>
+  </section>
+
+  <!-- WHY AUTHORITY MATTERS -->
+  <section id="why">
+    <p class="section-tag">Why It Matters</p>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 class="why-headline fade-in">
+          AI recommends brands it already<br /><em>recognizes as credible.</em>
+        </h2>
+      </div>
+      <div class="why-right">
+        <p class="why-opener fade-in">Visibility follows authority.</p>
+        <p class="why-body fade-in">AI systems learn trust through repeated validation across credible sources: publications, experts, and category references.</p>
+        <p class="why-body fade-in">The more consistent the validation, the more likely a brand is to be recommended.</p>
+        <ul class="why-list fade-in">
+          <li>Early authority compounds into long-term category advantage.</li>
+          <li>AI prioritizes credibility signals over publishing volume.</li>
+          <li>The most recommended brands are the most consistently validated.</li>
+        </ul>
+        <p class="why-conclusion fade-in">AI does not evaluate claims. It evaluates credibility signals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE WINDOW -->
+  <section id="opportunity">
+    <p class="section-tag">The Window</p>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 class="why-headline fade-in">
+          Most brands are still optimizing for search.<br /><em>AI has already moved on.</em>
+        </h2>
+      </div>
+      <div class="why-right">
+        <p class="why-body fade-in">Content volume, SEO, and paid traffic still dominate most strategies. But AI-driven discovery is now shaping buyer decisions before a website is ever visited.</p>
+        <p class="why-pivot fade-in">A small number of brands are already being consistently recommended. That gap is widening.</p>
+        <p class="why-body fade-in">The question is whether your brand is becoming one of them — or being filtered out.</p>
+        <p class="why-conclusion fade-in">The question is whether your brand is becoming the answer, or hoping to be found.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="framework">
+    <p class="section-tag">How It Works</p>
+    <div class="framework-intro">
+      <h2 class="framework-headline fade-in">
+        Authority is not built through content volume.<br /><em>It is built through structured credibility signals.</em>
+      </h2>
+      <p class="framework-label fade-in">The Authority First Framework</p>
+      <div class="framework-flow fade-in">
+        <span class="framework-flow-step">Audit</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Build</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Earn</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Compound</span>
+      </div>
+      <p class="framework-desc fade-in">
+        A structured process for turning expertise into signals AI systems consistently recognize and reinforce.
+      </p>
+    </div>
+    <div class="framework-phases">
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 01</p>
+        <h3 class="phase-name">Find the Gap</h3>
+        <p class="phase-outcome">Output: Authority gap audit + roadmap</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">We analyze how major AI systems describe your category and identify where your brand appears, where it is missing, and why. You get a clear breakdown of your current AI visibility and what is required to change it.</p>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 02</p>
+        <h3 class="phase-name">Build the Foundation</h3>
+        <p class="phase-outcome">Output: 2&ndash;4 authority assets / month</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">We create the credibility signals AI systems use to evaluate expertise: original insights, structured thought leadership, and category-relevant authority content. You begin establishing the signals required for recognition.</p>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 03</p>
+        <h3 class="phase-name">Earn the Validation</h3>
+        <p class="phase-outcome">Output: 5+ tier-1 placements / quarter</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">We place your brand into trusted ecosystems where AI systems learn credibility: publications, expert networks, and high-trust platforms. This is where recognition becomes external validation.</p>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 04</p>
+        <h3 class="phase-name">Track &amp; Compound</h3>
+        <p class="phase-outcome">Output: Weekly citation tracking + optimization</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">We monitor how AI systems reference your brand, how often you are recommended, and how you compare to competitors. We refine the system based on real AI behavior.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY THIS WORKS -->
+  <section id="why-it-works">
+    <p class="section-tag">Why This Works</p>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 class="why-headline fade-in">
+          AI systems do not rank brands.<br /><em>They recognize them.</em>
+        </h2>
+      </div>
+      <div class="why-right">
+        <p class="why-body fade-in">They learn from repeated credibility signals across trusted sources: publications, experts, and category references.</p>
+        <p class="why-body fade-in">When those signals align, AI systems classify a brand as a known authority rather than a search result.</p>
+        <p class="why-conclusion fade-in">Authority First builds those signals so AI systems consistently recognize and recommend your brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE MEASURE -->
+  <section id="measure">
+    <p class="section-tag">What We Measure</p>
+    <div class="framework-intro">
+      <h2 class="framework-headline fade-in">
+        We Track What<br /><em>Actually Matters.</em>
+      </h2>
+      <p class="framework-desc fade-in">
+        AI citation visibility, not rankings or vanity metrics.
+      </p>
+    </div>
+    <div class="measure-grid fade-in">
+      <div class="measure-metric">
+        <p class="measure-metric-name">Citation Footprint</p>
+        <p class="measure-metric-desc">How many times your brand appears as a cited source when we ask category-relevant questions. (Example: "You appear in 24% of relevant answers.")</p>
+      </div>
+      <div class="measure-metric">
+        <p class="measure-metric-name">Answer Share</p>
+        <p class="measure-metric-desc">What percentage of all AI-generated answers in your space mention you.</p>
+      </div>
+      <div class="measure-metric">
+        <p class="measure-metric-name">Prompt Consistency</p>
+        <p class="measure-metric-desc">Whether you appear reliably across variations of the same question — tests stability across models.</p>
+      </div>
+      <div class="measure-metric">
+        <p class="measure-metric-name">Competitive Position</p>
+        <p class="measure-metric-desc">How you're gaining or losing share vs. competitors in the same space.</p>
+      </div>
+    </div>
+    <p class="measure-method fade-in">We probe each model 20&ndash;30 times per week with questions from your domain, track all four metrics, and adjust strategy based on what's actually working.</p>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <p class="section-tag">Access Levels</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-headline fade-in">
+        Choose Your<br /><em>Path.</em>
+      </h2>
+      <p class="pricing-note fade-in">
+        Each level increases how often AI systems recognize and recommend your brand. Start with clarity. Scale into category dominance.
+      </p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="plan fade-in">
+        <p class="plan-tag">One-time &middot; 2&ndash;3 weeks</p>
+        <p class="plan-name">Authority Audit</p>
+        <p class="plan-subtitle">Understand why AI does not recommend you yet.</p>
+        <p class="plan-period">Project engagement</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">AI visibility gap across major models</li>
+          <li class="plan-feature">Competitive recommendation analysis</li>
+          <li class="plan-feature">Category positioning breakdown</li>
+          <li class="plan-feature">90-day authority roadmap</li>
+        </ul>
+        <p class="plan-results-note"><strong>Outcome:</strong> Clear understanding of what prevents AI from citing your brand.</p>
+        <a href="#contact" class="plan-btn">Start Audit</a>
+      </div>
+
+      <div class="plan fade-in">
+        <p class="plan-tag">90-day minimum</p>
+        <p class="plan-name">Foundation Infrastructure</p>
+        <p class="plan-subtitle">Begin appearing in AI recommendations.</p>
+        <p class="plan-period">Monthly retainer</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Development of credibility signals</li>
+          <li class="plan-feature">Strategic distribution across trusted platforms</li>
+          <li class="plan-feature">Tier-1 visibility activation</li>
+          <li class="plan-feature">Weekly AI recommendation tracking</li>
+          <li class="plan-feature">Monthly 30-min strategy call</li>
+        </ul>
+        <p class="plan-results-note"><strong>Outcome:</strong> Your brand begins appearing in AI-generated recommendations.</p>
+        <a href="#contact" class="plan-btn">Build Foundation</a>
+      </div>
+
+      <div class="plan featured fade-in">
+        <p class="plan-tag">6-month minimum</p>
+        <p class="plan-name">Growth Infrastructure</p>
+        <p class="plan-subtitle">Become consistently recommended by AI systems.</p>
+        <p class="plan-period">Monthly retainer, then month-to-month</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Expanded credibility signal system</li>
+          <li class="plan-feature">Multi-channel authority distribution</li>
+          <li class="plan-feature">Tier-1 publication strategy</li>
+          <li class="plan-feature">Competitive recommendation tracking</li>
+          <li class="plan-feature">Weekly citation report + ongoing optimization</li>
+        </ul>
+        <p class="plan-results-note"><strong>Outcome:</strong> Your brand is consistently recommended across category-related AI prompts.</p>
+        <a href="#contact" class="plan-btn">Expand Authority</a>
+      </div>
+
+      <div class="plan fade-in">
+        <p class="plan-tag">Custom engagement</p>
+        <p class="plan-name">Category Authority Infrastructure</p>
+        <p class="plan-subtitle">Become the default answer in your category.</p>
+        <p class="plan-period">6-month minimum, then custom terms</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Category positioning architecture for AI systems</li>
+          <li class="plan-feature">Authority graph and credibility network design</li>
+          <li class="plan-feature">High-trust signal placement strategy</li>
+          <li class="plan-feature">Competitive displacement system</li>
+          <li class="plan-feature">AI classification reinforcement system</li>
+        </ul>
+        <p class="plan-results-note"><strong>Outcome:</strong> AI systems consistently classify your brand as the leading recommendation in your category.</p>
+        <a href="#contact" class="plan-btn">Request Access</a>
+      </div>
+
+    </div>
+
+    <div class="pricing-fit fade-in">
+      <p class="pricing-fit-title">Not sure where to start?</p>
+      <p class="pricing-fit-body">Start with the Authority Audit. It shows exactly where you stand and what would move the needle. Most clients move to Foundation or Growth after seeing the findings.</p>
+      <a href="#contact" class="plan-btn" style="display:inline-block;margin-bottom:0;">Get My Authority Audit</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <p class="section-tag">Q&amp;A</p>
+    <div class="faq-intro">
+      <h2 class="faq-headline fade-in">Common<br /><em>Questions.</em></h2>
+      <p class="faq-desc fade-in">Questions we hear most often from brands exploring AI visibility.</p>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">What exactly are we measuring? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>Four metrics, tracked weekly across ChatGPT, Claude, Gemini, and Perplexity:</strong></p>
+          <ul>
+            <li><strong>Citation Footprint:</strong> How many times your brand appears as a cited source when we ask category-relevant questions.</li>
+            <li><strong>Answer Share:</strong> What percentage of all AI-generated answers in your space mention you.</li>
+            <li><strong>Prompt Consistency:</strong> Whether you appear reliably across variations of the same question.</li>
+            <li><strong>Competitive Position:</strong> How you're gaining or losing share vs. competitors.</li>
+          </ul>
+          <p>We probe each model 20&ndash;30 times per week with questions from your domain, track these metrics, and adjust strategy based on what's actually working.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why does documented authority matter for AI? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>Because AI systems aren't smart. They're pattern-matching machines trained on the public internet.</strong></p>
+          <p>If you appear consistently across multiple credible sources as an expert in your domain, AI sees that pattern and learns: "This brand is credible. When someone asks about this topic, mentioning them makes sense."</p>
+          <p>If you only appear on your own website, AI sees no pattern. No third-party validation. No external credibility signal.</p>
+          <p>Authority is just evidence of real expertise. And evidence needs witnesses. AI systems need to see that evidence repeated across trusted sources.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Do you guarantee placements or citations? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>We can't guarantee outcomes we don't fully control. Here's what we do guarantee:</strong></p>
+          <ul>
+            <li>Strategic, structured approach</li>
+            <li>Consistent execution on deliverables</li>
+            <li>Weekly measurement and reporting</li>
+            <li>Monthly optimization based on what's working</li>
+            <li>Dedicated focus on your category</li>
+          </ul>
+          <p><strong>We can't guarantee:</strong> specific number of placements (editor discretion), specific citation rates (AI systems evolve), or immediate results (authority builds over time).</p>
+          <p>What we do promise: a disciplined, strategic approach with weekly transparency. If something isn't working, we adjust. If you're making progress, we compound it.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Why is "documented authority" different from just "being visible in AI"? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">
+          <p><strong>Because AI systems don't recognize claims. They recognize patterns.</strong></p>
+          <p>When you build documented authority, you're building evidence: consistent mentions across trusted sources, expert commentary, third-party validation, proof points. AI systems pattern-match on that evidence. They learn: "When someone asks about X category, this brand appears in sources I trust."</p>
+          <p>That's fundamentally different from chasing placements. It's not about getting cited in more answers. It's about becoming the source AI systems reach for.</p>
+          <p>The brands winning in AI aren't doing more. They're strategically building the kind of documented expertise that looks real to both humans and machines.</p>
+        </div></div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta fade-in">
+      <p>We offer a free visibility audit: we'll show you exactly where you're invisible to AI models and what a 90-day plan would look like for your brand. No obligation. No sales pitch. Just honest visibility intelligence.</p>
+      <a href="#contact" class="faq-cta-btn">See How AI Describes Your Brand</a>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section id="who">
+    <p class="section-tag">Fit</p>
+    <div class="who-grid">
+      <div class="fade-in">
+        <p class="who-label">Who This Is For</p>
+        <h2 class="who-headline">Built for brands ready to become the one <em>AI recommends.</em></h2>
+        <ul class="who-list">
+          <li>Founders in competitive markets where AI already shapes buyer decisions</li>
+          <li>Teams selling into categories where AI is the first research step</li>
+          <li>Brands that want to appear in AI answers, not just search results</li>
+          <li>Companies investing in long-term visibility and category position</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <p class="who-label">Not the Right Fit</p>
+        <h2 class="who-headline who-headline--muted">Short-term tactics.<br />Volume plays.</h2>
+        <ul class="who-list who-list--not">
+          <li>Results in under 30 days</li>
+          <li>Content without strategic positioning</li>
+          <li>Paid traffic as your primary growth model</li>
+          <li>A shortcut to authority</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-tag">About</p>
+    <div class="about-grid">
+      <div class="about-photo fade-in">
+        <img src="assets/images/leeann-silver.jpg" loading="lazy" alt="LeeAnn Silver, Founder of Authority First" />
+      </div>
+      <div class="about-content fade-in">
+        <h2 class="about-headline">Built by a PR operator who<br /><em>saw the shift early.</em></h2>
+        <p class="about-bio">Authority First exists because AI systems now determine which brands get recommended.</p>
+        <p class="about-bio">The same credibility signals that once built trust in traditional media now determine which brands appear in AI-generated answers.</p>
+        <p class="about-bio">After 25 years in PR and earned media, LeeAnn Silver recognized this shift early and built Authority First to help brands adapt before competitors do.</p>
+        <p class="about-bio">Most AI visibility firms come from SEO or data backgrounds. Authority First is built on earned media systems and how credibility actually forms in the real world.</p>
+        <p class="about-bio about-bio--strong">We are not predicting this shift. We are operating inside it.</p>
+        <div class="about-cta-block fade-in">
+          <p class="about-cta-label">Ready to own your category in AI?</p>
+          <p class="about-bio">Start with a free audit. We'll show you exactly where you're invisible and what's possible in 90 days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2 class="cta-headline fade-in">
+      Find out where AI<br />stands on<br /><em>your brand.</em>
+    </h2>
+    <div class="cta-right fade-in">
+      <p class="cta-sub">
+        We analyze how major AI systems describe your category and your brand. You see exactly where you stand and what is required to change it.
+      </p>
+      <form class="cta-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <input type="email" name="email" placeholder="Work email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="company" placeholder="Company" required />
+          </div>
+          <div class="form-field">
+            <select name="tier">
+              <option value="" disabled selected>Interested in&hellip;</option>
+              <option value="audit">Authority Audit</option>
+              <option value="foundation">Foundation Infrastructure</option>
+              <option value="growth">Growth Infrastructure</option>
+              <option value="category">Category Authority Infrastructure</option>
+              <option value="unsure">Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field full">
+          <textarea name="message" placeholder="Tell us about your brand, your category, and your goals." rows="4"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Get My Authority Audit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="#" class="footer-logo">
+        <svg class="logo-icon logo-icon--sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+        <span class="logo-wordmark">Authority<em>First</em></span>
+      </a>
+      <p class="footer-tagline">Become the source AI recommends.</p>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="#framework">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-instagram"><a href="https://instagram.com/authorityfirst" target="_blank" rel="noopener">@authorityfirst</a></p>
+      <p class="footer-copy">&copy; 2026 Authority First. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll state
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // Form submission via Formspree
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const response = await fetch('https://formspree.io/f/xojbejyz', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          btn.textContent = 'Message Sent';
+          btn.style.opacity = '0.6';
+          form.reset();
+        } else {
+          btn.textContent = 'Something went wrong. Try again.';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
