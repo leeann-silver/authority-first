@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Schema Builder">
+  <title>Schema Builder — The Good Record</title>
+    <rect fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x="10" y="14" width="44" height="36" rx="3"></rect>
+    <line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="10" y1="23" x2="54" y2="23"></line>
+    <path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M24 32 L19 37 L24 42 M40 32 L45 37 L40 42"></path>
+    <line fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x1="34" y1="30" x2="30" y2="44"></line>
+</svg>

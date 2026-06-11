@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Editorial Pitch">
+  <title>Editorial Pitch — The Good Record</title>
+    <circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="25" cy="28" r="14"></circle>
+    <circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="39" cy="28" r="14"></circle>
+    <path fill="rgba(167,134,78,0.18)" d="M32 17.2 A14 14 0 0 1 32 38.8 A14 14 0 0 1 32 17.2 Z"></path>
+    <path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M32 17.2 A14 14 0 0 1 32 38.8"></path>
+    <path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20 50 a5 5 0 0 1 10 0 M34 50 a5 5 0 0 1 10 0"></path>
+    <circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="25" cy="46.5" r="3"></circle>
+    <circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="39" cy="46.5" r="3"></circle>
+</svg>

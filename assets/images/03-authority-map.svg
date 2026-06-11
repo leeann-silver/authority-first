@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Authority Map">
+  <title>Authority Map — The Good Record</title>
+    <rect fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x="10" y="14" width="44" height="34" rx="3"></rect>
+    <line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="10" y1="23" x2="54" y2="23"></line>
+    <circle fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" cx="15" cy="18.5" r="1.1"></circle>
+    <circle fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" cx="19" cy="18.5" r="1.1"></circle>
+    <path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M18 42 L28 31 L35 38 L46 27"></path>
+    <circle fill="#a7864e" cx="46" cy="27" r="2.4"></circle>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Answer Share">
+  <title>Answer Share — The Good Record</title>
+    <circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="28" cy="30" r="18"></circle>
+    <path fill="rgba(167,134,78,0.18)" d="M28 30 V12 A18 18 0 0 1 44 24 Z"></path>
+    <path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M28 30 L28 12 M28 30 L44 24"></path>
+    <path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M48 14 h8 v8 M56 14 l-12 12"></path>
+</svg>

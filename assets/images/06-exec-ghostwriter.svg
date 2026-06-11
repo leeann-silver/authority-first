@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Exec Ghostwriter">
+  <title>Exec Ghostwriter — The Good Record</title>
+    <path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M40 14 L50 24 L26 48 L14 50 L16 38 Z"></path>
+    <line fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x1="36" y1="18" x2="46" y2="28"></line>
+    <path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M16 38 L26 48 L14 50 Z"></path>
+    <line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="14" y1="56" x2="40" y2="56"></line>
+</svg>
