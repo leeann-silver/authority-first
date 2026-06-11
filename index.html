@@ -1,1 +1,1596 @@
-file:///Users/leeannsilver/Documents/Claude/Projects/Authority%20First/the-good-record-index.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Good Record | Build the Record AI Trusts</title>
+  <meta name="description" content="The Good Record is a strategic communications discipline. We build the authority infrastructure that causes AI platforms, media outlets, search engines, and buyers to recognize your company as a trusted source." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2d5a;
+      --gold: #c9a558;
+      --white: #fafaf8;
+      --mid: #5a6a8a;
+      --border: #d8d4cc;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.5rem 4rem;
+      background: rgba(250, 250, 248, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+    nav.scrolled { border-bottom-color: var(--border); }
+
+    .logo-icon { height: 32px; width: auto; flex-shrink: 0; display: block; }
+    .logo-icon--sm { height: 24px; }
+    .logo-icon--lg { height: 64px; }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      text-decoration: none;
+    }
+
+    .logo-wordmark {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .logo-wordmark em { font-style: italic; color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white) !important;
+      background: var(--navy);
+      padding: 0.6rem 1.4rem;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.8; }
+
+    /* BRAND INTRO */
+    .brand-intro {
+      padding: 8rem 4rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .brand-intro-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .brand-wordmark {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.5rem);
+      font-weight: 400;
+      color: var(--navy);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      text-align: center;
+    }
+    .brand-wordmark em { display: block; font-style: italic; color: var(--gold); }
+
+    .brand-tagline {
+      font-family: var(--serif);
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      letter-spacing: 0.02em;
+    }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 4rem 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8vw, 8.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      margin-bottom: 2rem;
+    }
+    .hero-headline em { font-style: italic; font-weight: 300; }
+
+    .hero-progression {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-progression-step {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(201,165,88,0.12);
+      border: 1px solid rgba(201,165,88,0.35);
+      padding: 0.5rem 1rem;
+    }
+    .hero-progression-arrow { color: var(--gold); font-size: 1rem; font-weight: 300; flex-shrink: 0; }
+
+    .hero-bottom {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .hero-left { flex: 1; }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 52ch;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--navy);
+      padding: 0.85rem 2rem;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.8; }
+
+    .hero-stat-row {
+      display: flex;
+      gap: 3rem;
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      line-height: 1;
+      display: block;
+      color: var(--gold);
+    }
+    .hero-stat-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+    }
+
+    .scroll-line {
+      position: absolute;
+      bottom: 0;
+      left: 4rem;
+      width: 1px;
+      height: 60px;
+      background: var(--gold);
+      animation: growLine 1.4s ease-out 0.8s both;
+    }
+    @keyframes growLine {
+      from { transform: scaleY(0); transform-origin: top; }
+      to   { transform: scaleY(1); transform-origin: top; }
+    }
+
+    /* SECTION SHARED */
+    section { padding: 7rem 4rem; }
+
+    .section-tag {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-tag::after {
+      content: '';
+      display: block;
+      width: 2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* CATEGORY STATEMENT */
+    #category-statement {
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 5rem 4rem;
+    }
+    .category-statement-text {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2vw, 1.75rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--navy);
+      max-width: 64ch;
+      margin: 0 auto 1.5rem;
+    }
+    .category-statement-sub {
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-style: normal;
+      font-family: var(--sans);
+    }
+
+    /* PROBLEM (dark) */
+    #problem {
+      background: var(--navy);
+      color: var(--white);
+    }
+    #problem .section-tag { color: #888; }
+    #problem .section-tag::after { background: #888; }
+
+    .problem-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.5vw, 5rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      max-width: 28ch;
+    }
+    .problem-headline em { font-style: italic; color: var(--gold); }
+
+    .problem-para {
+      font-size: 1rem;
+      color: #bbb;
+      line-height: 1.8;
+      max-width: 62ch;
+      margin-bottom: 1.5rem;
+    }
+
+    .problem-conclusion {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      font-weight: 300;
+      color: var(--gold);
+      border-top: 1px solid #333;
+      padding-top: 2rem;
+      margin-top: 2.5rem;
+      font-style: italic;
+      max-width: 54ch;
+    }
+
+    /* WHY / OPPORTUNITY (two-col grid) */
+    #why, #opportunity {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .why-left { position: sticky; top: 6rem; }
+
+    .why-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 5.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+      max-width: 18ch;
+    }
+    .why-headline em { font-style: italic; }
+
+    .why-opener {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 300;
+      color: var(--navy);
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .why-body {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .why-pivot {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.3;
+      margin: 1.5rem 0;
+    }
+
+    .why-list {
+      list-style: none;
+      margin: 0.5rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .why-list li {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .why-list li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+
+    .why-conclusion {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* WHAT WE ARE NOT */
+    #not {
+      background: var(--navy);
+      color: var(--white);
+      border-bottom: 1px solid #333;
+    }
+    #not .section-tag { color: #888; }
+    #not .section-tag::after { background: #888; }
+
+    .not-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 4rem;
+      max-width: 24ch;
+    }
+    .not-headline em { font-style: italic; color: var(--gold); }
+
+    .not-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #333;
+    }
+
+    .not-item {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid #333;
+    }
+    .not-item:last-child { border-right: none; }
+    .not-item:not(:first-child) { padding-left: 2rem; }
+
+    .not-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .not-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .not-contrast {
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 0.75rem;
+    }
+
+    .not-distinction {
+      font-size: 0.92rem;
+      color: #ccc;
+      line-height: 1.7;
+    }
+
+    /* FRAMEWORK */
+    #framework { border-bottom: 1px solid var(--border); }
+
+    .framework-intro {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 5rem;
+    }
+
+    .framework-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .framework-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .framework-headline em { font-style: italic; }
+
+    .framework-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      max-width: 44ch;
+      line-height: 1.7;
+      align-self: end;
+    }
+
+    .framework-flow {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin: 2.5rem 0;
+    }
+    .framework-flow-step {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--navy);
+      background: rgba(201,165,88,0.12);
+      border: 1px solid rgba(201,165,88,0.35);
+      padding: 0.5rem 1rem;
+    }
+    .framework-flow-arrow { color: var(--gold); font-size: 1rem; font-weight: 300; flex-shrink: 0; }
+
+    .framework-phases {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .phase {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--border);
+      cursor: default;
+      transition: background 0.2s;
+    }
+    .phase:last-child { border-right: none; }
+    .phase:not(:first-child) { padding-left: 2rem; }
+    .phase:hover { background: #eef1f8; }
+
+    .phase-label {
+      font-family: var(--sans);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 0.5rem;
+    }
+
+    .phase-name {
+      font-family: var(--serif);
+      font-size: 1.75rem;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .phase-outcome {
+      font-family: var(--sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .phase-divider {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .phase-desc {
+      font-size: 0.88rem;
+      color: var(--mid);
+      line-height: 1.65;
+    }
+
+    /* WHY THIS WORKS */
+    #why-it-works { border-bottom: 1px solid var(--border); }
+
+    /* PRICING */
+    #pricing { border-bottom: 1px solid var(--border); }
+
+    .pricing-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: end;
+      margin-bottom: 4rem;
+    }
+
+    .pricing-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+    .pricing-headline em { font-style: italic; }
+
+    .pricing-note {
+      font-size: 0.92rem;
+      color: var(--mid);
+      line-height: 1.7;
+      align-self: end;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .plan {
+      padding: 2.5rem 2rem 2.5rem 0;
+      border-right: 1px solid var(--border);
+    }
+    .plan:last-child { border-right: none; }
+    .plan:not(:first-child) { padding-left: 2rem; }
+
+    .plan.featured {
+      background: var(--navy);
+      color: var(--white);
+      padding: 2.5rem;
+      margin: -1px;
+    }
+
+    .plan-tag {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .plan.featured .plan-tag { color: rgba(201,165,88,0.8); }
+
+    .plan-name {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+    .plan.featured .plan-name { color: var(--white); }
+
+    .plan-subtitle {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+    .plan.featured .plan-subtitle { color: rgba(201,165,88,0.85); }
+
+    .plan-period {
+      font-size: 0.78rem;
+      color: var(--mid);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.75rem;
+    }
+    .plan.featured .plan-period { color: #888; }
+
+    .plan-divider {
+      width: 1.5rem;
+      height: 1px;
+      background: var(--border);
+      margin-bottom: 1.75rem;
+    }
+    .plan.featured .plan-divider { background: var(--gold); }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      margin-bottom: 2rem;
+    }
+
+    .plan-feature {
+      font-size: 0.86rem;
+      color: var(--mid);
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+    .plan.featured .plan-feature { color: #bbb; }
+    .plan-feature::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+    .plan.featured .plan-feature::before { color: rgba(201,165,88,0.7); }
+
+    .plan-results-note {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .plan.featured .plan-results-note { color: #aaa; border-top-color: rgba(250,250,248,0.1); }
+
+    .plan-btn {
+      display: block;
+      text-align: center;
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 1.5rem;
+      border: 1px solid var(--border);
+      color: var(--navy);
+      transition: all 0.2s;
+    }
+    .plan-btn:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+    .plan.featured .plan-btn { background: var(--white); color: var(--navy); border-color: var(--white); }
+    .plan.featured .plan-btn:hover { background: transparent; color: var(--white); border-color: #888; }
+
+    .pricing-fit {
+      border-top: 1px solid var(--border);
+      padding-top: 3.5rem;
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    .pricing-fit-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      font-weight: 300;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-fit-body {
+      font-size: 0.95rem;
+      color: var(--mid);
+      margin-bottom: 2rem;
+      max-width: 44ch;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.65;
+    }
+
+    /* WHO */
+    #who { border-bottom: 1px solid var(--border); }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .who-headline {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 2rem;
+    }
+    .who-headline em { font-style: italic; }
+    .who-headline--muted { color: var(--mid); }
+
+    .who-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .who-list li {
+      font-size: 0.9rem;
+      color: var(--mid);
+      line-height: 1.6;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .who-list li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+    .who-list--not li::before { content: '×'; color: var(--border); }
+
+    .who-label {
+      font-family: var(--sans);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ABOUT */
+    #about { border-bottom: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 6rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      position: sticky;
+      top: 6rem;
+      padding: 4rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+    }
+    .about-photo img { width: 100%; display: block; filter: grayscale(10%); }
+
+    .about-headline {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+    }
+    .about-headline em { font-style: italic; }
+
+    .about-bio {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-bio--strong {
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 400;
+      line-height: 1.75;
+    }
+
+    .about-cta-block {
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .about-cta-label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--navy);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    /* CONTACT */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .cta-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 6rem);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+    .cta-headline em { font-style: italic; }
+
+    .cta-right { display: flex; flex-direction: column; gap: 2rem; }
+
+    .cta-sub { font-size: 1rem; color: var(--mid); line-height: 1.7; }
+
+    .cta-form { display: flex; flex-direction: column; gap: 0; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+
+    .form-field { position: relative; }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 0;
+      padding: 1rem 1rem 0.8rem;
+      font-family: var(--sans);
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--navy);
+      outline: none;
+      transition: border-color 0.2s;
+      -webkit-appearance: none;
+      margin-top: -1px;
+      margin-left: -1px;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: var(--navy); position: relative; z-index: 1; }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #aaa; }
+    .form-field textarea { resize: none; min-height: 100px; }
+    .form-field.full { grid-column: 1 / -1; }
+
+    .form-submit {
+      display: block;
+      width: 100%;
+      padding: 1.1rem;
+      background: var(--navy);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      margin-top: -1px;
+    }
+    .form-submit:hover { opacity: 0.8; }
+
+    /* PHASE ICONS */
+    .phase-icons {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+    }
+    .phase-icon {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .phase-icon svg {
+      width: 36px;
+      height: 36px;
+      display: block;
+    }
+    .phase-icon-label {
+      font-family: var(--sans);
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-align: center;
+      line-height: 1.3;
+      max-width: 7ch;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 3rem 4rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 3rem;
+    }
+
+    .footer-left { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      text-decoration: none;
+    }
+
+    .footer-tagline {
+      font-size: 0.82rem;
+      color: var(--mid);
+      line-height: 1.6;
+      max-width: 38ch;
+      font-style: italic;
+    }
+
+    .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 1rem; }
+
+    .footer-links { display: flex; gap: 2rem; list-style: none; }
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--navy); }
+
+    .footer-instagram a {
+      font-family: var(--sans);
+      font-size: 0.72rem;
+      color: var(--mid);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .footer-instagram a:hover { color: var(--navy); }
+
+    .footer-copy { font-size: 0.72rem; color: var(--mid); letter-spacing: 0.05em; }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      nav { padding: 1.25rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 4rem 1.5rem; }
+      #hero { padding: 0 1.5rem 4rem; }
+      .brand-intro { padding: 7rem 1.5rem 3rem; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; }
+      .hero-stat-row { text-align: left; }
+      .why-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .why-left { position: static; }
+      .not-grid { grid-template-columns: 1fr; }
+      .not-item { border-right: none; border-bottom: 1px solid #333; padding: 2rem 0; }
+      .not-item:not(:first-child) { padding-left: 0; }
+      .framework-phases { grid-template-columns: 1fr; }
+      .phase { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+      .phase:not(:first-child) { padding-left: 0; }
+      .pricing-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+      .pricing-grid { grid-template-columns: 1fr 1fr; }
+      .plan { border-right: none; border-bottom: 1px solid var(--border); padding: 2rem 0; }
+      .plan:not(:first-child) { padding-left: 0; }
+      .plan.featured { margin: 0; padding: 2rem; }
+      .who-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-photo { position: static; }
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 2rem; padding: 2rem 1.5rem; }
+      .footer-right { align-items: flex-start; }
+      .footer-links { justify-content: flex-start; }
+    }
+
+    /* ANIMATIONS */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20100%20100%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250%22%20y2%3D%2213%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2282%22%20y2%3D%2231.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2282%22%20y2%3D%2268.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2250%22%20y2%3D%2287%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2218%22%20y2%3D%2268.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Cline%20x1%3D%2250%22%20y1%3D%2250%22%20x2%3D%2218%22%20y2%3D%2231.5%22%20stroke%3D%22%23c4bfb0%22%20stroke-width%3D%222.5%22%20stroke-linecap%3D%22round%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2213%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2231.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2282%22%20cy%3D%2268.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2287%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2268.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2218%22%20cy%3D%2231.5%22%20r%3D%227%22%20fill%3D%22%231a2d5a%22%2F%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2215%22%20fill%3D%22%23c9a558%22%2F%3E%3C%2Fsvg%3E">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+      <span class="logo-wordmark">The Good<em>Record</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#why">Why It Matters</a></li>
+      <li><a href="#framework">How It Works</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact" class="nav-cta">Get Your Authority Audit</a></li>
+    </ul>
+  </nav>
+
+  <!-- BRAND INTRO -->
+  <div class="brand-intro">
+    <div class="brand-intro-inner">
+      <svg class="logo-icon logo-icon--lg" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+      <p class="brand-wordmark">The Good<em>Record</em></p>
+      <p class="brand-tagline">Build the record AI trusts.</p>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="scroll-line"></div>
+    <p class="hero-eyebrow fade-in">Strategic Communications Infrastructure</p>
+    <h1 class="hero-headline fade-in">
+      Build the Record<br /><em>AI Trusts.</em>
+    </h1>
+    <div class="hero-progression fade-in">
+      <span class="hero-progression-step">Good Work</span>
+      <span class="hero-progression-arrow">&#8594;</span>
+      <span class="hero-progression-step">Good Words</span>
+      <span class="hero-progression-arrow">&#8594;</span>
+      <span class="hero-progression-step">Good Record</span>
+      <span class="hero-progression-arrow">&#8594;</span>
+      <span class="hero-progression-step">Authority</span>
+    </div>
+    <div class="hero-bottom fade-in">
+      <div class="hero-left">
+        <p class="hero-sub">
+          Build the credibility, expertise, and proof systems that cause AI platforms, media outlets, search engines, and buyers to recognize your company as a trusted source.
+        </p>
+        <a href="#contact" class="hero-cta">See Where You Stand</a>
+      </div>
+      <div class="hero-stat-row">
+        <div>
+          <span class="hero-stat-num">90</span>
+          <span class="hero-stat-label">Days to positioned authority</span>
+        </div>
+        <div>
+          <span class="hero-stat-num">4</span>
+          <span class="hero-stat-label">AI models tracked weekly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORY STATEMENT -->
+  <section id="category-statement">
+    <p class="category-statement-text fade-in">
+      The Good Record is a strategic communications discipline. We help companies become recognized sources of expertise by building the infrastructure, credibility, and proof systems that AI platforms, media outlets, search engines, and buyers use to determine trust.
+    </p>
+    <p class="category-statement-sub fade-in">Authority Infrastructure&#8482;</p>
+  </section>
+
+  <!-- WHAT CHANGED -->
+  <section id="problem">
+    <p class="section-tag">What Changed</p>
+    <h2 class="problem-headline fade-in">
+      Google rankings used to be enough.<br /><em>They are not anymore.</em>
+    </h2>
+    <p class="problem-para fade-in">Buyers are skipping search results. They are asking AI tools for direct recommendations and getting them. ChatGPT, Perplexity, Claude, and Google AI are now the first stop for millions of purchase decisions.</p>
+    <p class="problem-para fade-in">These tools do not show ten options and let buyers decide. They name two or three brands they consider credible. Everyone else gets left out.</p>
+    <p class="problem-para fade-in">This is a communications problem. Not a content problem. Not an SEO problem. The brands that get named built something most brands never invested in: the infrastructure that makes them worth citing.</p>
+    <p class="problem-para fade-in">Posting more content will not fix this. AI does not reward activity. It rewards the record.</p>
+    <p class="problem-conclusion fade-in">Good words follow good works. Authority follows the record.</p>
+  </section>
+
+  <!-- WHY AUTHORITY MATTERS -->
+  <section id="why">
+    <p class="section-tag">Why It Matters</p>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 class="why-headline fade-in">
+          The record precedes<br /><em>the recommendation.</em>
+        </h2>
+      </div>
+      <div class="why-right">
+        <p class="why-opener fade-in">Visibility follows authority.</p>
+        <p class="why-body fade-in">AI learns who to recommend the same way people do. It looks for consistent evidence of credibility across earned media, expert contributions, third-party citations, and documented expertise. The more that record exists, the more AI connects your brand to your category.</p>
+        <ul class="why-list fade-in">
+          <li>The brands building this now will be much harder to displace later.</li>
+          <li>AI does not care how much you publish. It cares about the record others have built around you.</li>
+          <li>The brands winning in AI are not the loudest. They are the most consistently credible.</li>
+        </ul>
+        <p class="why-conclusion fade-in">AI does not take your word for it. It inherits the record that already exists.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE WINDOW -->
+  <section id="opportunity">
+    <p class="section-tag">The Window</p>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 class="why-headline fade-in">
+          Most brands are still<br /><em>playing the old game.</em>
+        </h2>
+      </div>
+      <div class="why-right">
+        <p class="why-body fade-in">More blog posts. More social. More noise. Meanwhile, a small number of brands are quietly building the kind of record that AI actually learns from.</p>
+        <p class="why-body fade-in">The window to own your category in AI is still open. It will not stay that way. The brands that move now will be the ones AI recommends by default. Everyone else will be playing catch-up.</p>
+        <p class="why-conclusion fade-in">The question is whether you are building the record or waiting for a shortcut that does not exist.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE ARE NOT -->
+  <section id="not">
+    <p class="section-tag">What We Are Not</p>
+    <h2 class="not-headline fade-in">
+      Three things we are<br /><em>often confused with.</em>
+    </h2>
+    <div class="not-grid">
+      <div class="not-item fade-in">
+        <p class="not-label">Not This</p>
+        <h3 class="not-title">PR Without Infrastructure</h3>
+        <p class="not-contrast">Coverage without infrastructure doesn't compound. Placements land, impressions run, the signal fades.</p>
+        <p class="not-distinction">The Good Record makes earned media do more, whether you work with an agency or not. Every placement becomes part of a system that builds lasting trust with AI platforms, search engines, and buyers.</p>
+      </div>
+      <div class="not-item fade-in">
+        <p class="not-label">Not This</p>
+        <h3 class="not-title">SEO</h3>
+        <p class="not-contrast">SEO optimizes websites.</p>
+        <p class="not-distinction">The Good Record builds the credibility systems that make organizations worth citing in the first place.</p>
+      </div>
+      <div class="not-item fade-in">
+        <p class="not-label">Not This</p>
+        <h3 class="not-title">Content Marketing</h3>
+        <p class="not-contrast">Content marketing creates assets.</p>
+        <p class="not-distinction">The Good Record creates recognized expertise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="framework">
+    <p class="section-tag">How It Works</p>
+    <div class="framework-intro">
+      <h2 class="framework-headline fade-in">
+        Authority isn't built through content or SEO.<br /><em>It's built through communications infrastructure.</em>
+      </h2>
+      <p class="framework-label fade-in">The Authority Operating System&#8482;</p>
+      <div class="framework-flow fade-in">
+        <span class="framework-flow-step">Audit</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Build</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Earn</span>
+        <span class="framework-flow-arrow">&#8594;</span>
+        <span class="framework-flow-step">Compound</span>
+      </div>
+      <p class="framework-desc fade-in">
+        A strategic communications framework for building recognized expertise. Not a visibility framework. Not an SEO framework. Not a content framework.
+      </p>
+    </div>
+    <div class="framework-phases">
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 01</p>
+        <h3 class="phase-name">Find the Gap</h3>
+        <p class="phase-outcome">You get: Authority gap report + 90-day action plan</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">We start by finding out where the record stands today. We ask four major AI tools about your category and document exactly what comes back. Who gets named. Who gets skipped. What evidence those named brands have that yours does not. You get a clear picture of the gap and what it takes to close it.</p>
+        <div class="phase-icons">
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="28" cy="30" r="18"/><path fill="rgba(167,134,78,0.18)" d="M28 30 V12 A18 18 0 0 1 44 24 Z"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M28 30 L28 12 M28 30 L44 24"/><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M48 14 h8 v8 M56 14 l-12 12"/></svg>
+            <span class="phase-icon-label">Answer Share</span>
+          </div>
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="27" cy="27" r="16"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M27 11 A16 16 0 0 1 41 19"/><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M27 27 L27 11 M27 27 L41 19"/><line fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x1="39" y1="39" x2="54" y2="54"/><circle fill="#a7864e" cx="27" cy="27" r="2"/></svg>
+            <span class="phase-icon-label">Citation Gaps</span>
+          </div>
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x="10" y="14" width="44" height="34" rx="3"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="10" y1="23" x2="54" y2="23"/><circle fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" cx="15" cy="18.5" r="1.1"/><circle fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" cx="19" cy="18.5" r="1.1"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M18 42 L28 31 L35 38 L46 27"/><circle fill="#a7864e" cx="46" cy="27" r="2.4"/></svg>
+            <span class="phase-icon-label">Authority Map</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 02</p>
+        <h3 class="phase-name">Build the Foundation</h3>
+        <p class="phase-outcome">You get: 2 to 4 authority signals per month</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">Before you can earn external validation, the foundational assets need to exist. Entity architecture, structured signals, executive positioning, narrative architecture. You cannot earn citations for expertise that is not documented anywhere credible.</p>
+        <div class="phase-icons">
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 28 L32 12 L52 28"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M32 12 L52 28"/><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M16 28 V50 H48 V28"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="16" y1="38" x2="48" y2="38"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="32" y1="38" x2="32" y2="50"/><circle fill="#a7864e" cx="32" cy="20" r="2.2"/></svg>
+            <span class="phase-icon-label">Message House</span>
+          </div>
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M40 14 L50 24 L26 48 L14 50 L16 38 Z"/><line fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x1="36" y1="18" x2="46" y2="28"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M16 38 L26 48 L14 50 Z"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="14" y1="56" x2="40" y2="56"/></svg>
+            <span class="phase-icon-label">Exec Ghostwriter</span>
+          </div>
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><rect fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x="10" y="14" width="44" height="36" rx="3"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="10" y1="23" x2="54" y2="23"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M24 32 L19 37 L24 42 M40 32 L45 37 L40 42"/><line fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x1="34" y1="30" x2="30" y2="44"/></svg>
+            <span class="phase-icon-label">Schema Builder</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 03</p>
+        <h3 class="phase-name">Earn the Validation</h3>
+        <p class="phase-outcome">You get: 5 or more major outlet placements per quarter</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">We earn placements in the publications AI learns from. Tier-1 coverage doesn't just influence buyers. It trains AI on who the credible players are. This is how claimed expertise becomes documented credibility.</p>
+        <div class="phase-icons">
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="25" cy="28" r="14"/><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="39" cy="28" r="14"/><path fill="rgba(167,134,78,0.18)" d="M32 17.2 A14 14 0 0 1 32 38.8 A14 14 0 0 1 32 17.2 Z"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M32 17.2 A14 14 0 0 1 32 38.8"/><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M20 50 a5 5 0 0 1 10 0 M34 50 a5 5 0 0 1 10 0"/><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="25" cy="46.5" r="3"/><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="39" cy="46.5" r="3"/></svg>
+            <span class="phase-icon-label">Editorial Pitch</span>
+          </div>
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M12 44 A22 22 0 0 1 52 44"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M40.5 25 A22 22 0 0 1 52 44"/><line fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" x1="32" y1="44" x2="44" y2="30"/><circle fill="#a7864e" cx="32" cy="44" r="3"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="32" y1="44" x2="32" y2="40"/></svg>
+            <span class="phase-icon-label">Newsjack Radar</span>
+          </div>
+        </div>
+      </div>
+      <div class="phase fade-in">
+        <p class="phase-label">Phase 04</p>
+        <h3 class="phase-name">Track &amp; Compound</h3>
+        <p class="phase-outcome">You get: Weekly tracking report + ongoing optimization</p>
+        <div class="phase-divider"></div>
+        <p class="phase-desc">Authority compounds. Every placement makes the next more likely. Every citation builds the evidence layer. Every mention reinforces the entity recognition that causes AI to reach for your name first. We track weekly and double down on what is working.</p>
+        <div class="phase-icons">
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M8 32 C16 20 48 20 56 32 C48 44 16 44 8 32 Z"/><circle fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" cx="32" cy="32" r="9"/><circle fill="#a7864e" cx="32" cy="32" r="4"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M46 20 l4 -4 M50 24 l5 -2"/></svg>
+            <span class="phase-icon-label">Competitor Watch</span>
+          </div>
+          <div class="phase-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true"><path fill="none" stroke="#16243f" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="M16 10 H40 L50 20 V54 H16 Z"/><path fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" d="M40 10 V20 H50"/><path fill="none" stroke="#a7864e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M22 44 L29 37 L34 41 L43 31"/><line fill="none" stroke="#16243f" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" x1="22" y1="28" x2="36" y2="28"/><circle fill="#a7864e" cx="43" cy="31" r="2"/></svg>
+            <span class="phase-icon-label">Weekly PR Report</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY IT WORKS -->
+  <section id="why-it-works">
+    <p class="section-tag">Why It Works</p>
+    <div class="why-grid">
+      <div class="why-left">
+        <h2 class="why-headline fade-in">
+          AI inherits<br /><em>the record.</em>
+        </h2>
+      </div>
+      <div class="why-right">
+        <p class="why-body fade-in">AI does not recommend brands because they publish more content. It recommends brands because it has inherited a record of consistent, credible, third-party evidence that they are the trusted source in their category.</p>
+        <p class="why-body fade-in">That record does not get built by accident. It gets built through a communications system designed to compound over time.</p>
+        <p class="why-conclusion fade-in">The Good Record builds that system.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing">
+    <p class="section-tag">Authority Infrastructure&#8482;</p>
+    <div class="pricing-intro">
+      <h2 class="pricing-headline fade-in">
+        Access<br /><em>Levels.</em>
+      </h2>
+      <p class="pricing-note fade-in">
+        Each tier builds more of the record. Start with an audit to see where you stand. Scale as authority compounds.
+      </p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="plan fade-in">
+        <p class="plan-tag">One-time &middot; 2&ndash;3 weeks</p>
+        <p class="plan-name">Authority Audit</p>
+        <p class="plan-subtitle">$2,500</p>
+        <p class="plan-period">Project engagement</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Authority gap mapping across 4 AI models</li>
+          <li class="plan-feature">AI visibility analysis and competitive review</li>
+          <li class="plan-feature">Recognition gap diagnosis</li>
+          <li class="plan-feature">90-day authority roadmap</li>
+        </ul>
+        <p class="plan-results-note"><strong>Outcome:</strong> Clarity on exactly where your record stands and what is keeping AI from citing you.</p>
+        <a href="#contact" class="plan-btn">Start Audit</a>
+      </div>
+
+      <div class="plan fade-in">
+        <p class="plan-tag">90-day minimum</p>
+        <p class="plan-name">Foundation Infrastructure</p>
+        <p class="plan-period">Monthly retainer</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Authority signal creation (2 to 4 signals per month)</li>
+          <li class="plan-feature">Distribution across the right publications and platforms</li>
+          <li class="plan-feature">8 to 10 tier-1 outlet outreach per quarter</li>
+          <li class="plan-feature">AI citation tracking (4 models, weekly)</li>
+        </ul>
+        <p class="plan-results-note"><strong>Expected outcome:</strong> You start appearing in AI answers in your category.</p>
+        <a href="#contact" class="plan-btn">Build Foundation</a>
+      </div>
+
+      <div class="plan featured fade-in">
+        <p class="plan-tag">6-month minimum</p>
+        <p class="plan-name">Growth Infrastructure</p>
+        <p class="plan-period">Monthly retainer, then month-to-month</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Expanded authority signals (4+ per month)</li>
+          <li class="plan-feature">Multi-channel visibility layers</li>
+          <li class="plan-feature">15 to 20 tier-1 outlet outreach per quarter</li>
+          <li class="plan-feature">Competitive intelligence tracking</li>
+          <li class="plan-feature">Monthly strategy call</li>
+        </ul>
+        <p class="plan-results-note"><strong>Expected outcome:</strong> AI begins recommending your brand consistently across category-related prompts.</p>
+        <a href="#contact" class="plan-btn">Expand Authority</a>
+      </div>
+
+      <div class="plan fade-in">
+        <p class="plan-tag">Custom &middot; 6-month minimum</p>
+        <p class="plan-name">Category Infrastructure</p>
+        <p class="plan-period">Custom terms</p>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li class="plan-feature">Category-level authority system design</li>
+          <li class="plan-feature">Full visibility strategy across the right publications and platforms</li>
+          <li class="plan-feature">25 to 30 tier-1 outlet outreach per quarter</li>
+          <li class="plan-feature">A system designed to make your brand the default recommendation</li>
+          <li class="plan-feature">Bespoke authority roadmap and reporting</li>
+        </ul>
+        <p class="plan-results-note"><strong>Expected outcome:</strong> AI names you first. Consistently. Your brand becomes the record others are measured against.</p>
+        <a href="#contact" class="plan-btn">Request Access</a>
+      </div>
+
+    </div>
+
+    <div class="pricing-fit fade-in">
+      <p class="pricing-fit-title">Not sure which level fits?</p>
+      <p class="pricing-fit-body">Start with the Authority Audit. It maps exactly where your record stands today, and what it takes to close the gap.</p>
+      <a href="#contact" class="plan-btn" style="display:inline-block;margin-bottom:0;">Get Your Audit</a>
+    </div>
+  </section>
+
+  <!-- WHO THIS IS FOR -->
+  <section id="who">
+    <p class="section-tag">Fit</p>
+    <div class="who-grid">
+      <div class="fade-in">
+        <p class="who-label">Who This Is For</p>
+        <h2 class="who-headline">Built for organizations ready to become<br />the source <em>AI trusts.</em></h2>
+        <ul class="who-list">
+          <li>Founders in competitive markets where AI is already naming their competitors</li>
+          <li>Teams that sell to buyers who use AI to research vendors before they ever talk to sales</li>
+          <li>Brands that want to build authority, not just chase visibility</li>
+          <li>Companies ready to invest in a record that compounds over time</li>
+          <li>PR and communications teams that want their earned media to do more</li>
+        </ul>
+      </div>
+      <div class="fade-in">
+        <p class="who-label">Not the Right Fit</p>
+        <h2 class="who-headline who-headline--muted">Quick wins, ad spend,<br />volume plays.</h2>
+        <ul class="who-list who-list--not">
+          <li>Results in 30 days or less</li>
+          <li>High-volume content without a strategy behind it</li>
+          <li>A replacement for paid traffic or SEO</li>
+          <li>A shortcut. There is not one.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <p class="section-tag">About</p>
+    <div class="about-grid">
+      <div class="about-photo fade-in">
+        <img src="assets/images/leeann-silver.jpg" loading="lazy" alt="LeeAnn Silver, Founder of The Good Record" />
+      </div>
+      <div class="about-content fade-in">
+        <h2 class="about-headline">Built by a Communications Operator Who<br /><em>Understood the Shift.</em></h2>
+        <p class="about-bio">The Good Record exists because of something I kept seeing in my work.</p>
+        <p class="about-bio">The outlets that moved the needle for brands. Tier-1 press, industry podcasts, the publications buyers trust. Those were the same sources AI systems were learning from. The earned media wins I had spent years building were suddenly doing double duty. Influencing buyers and training AI at the same time.</p>
+        <p class="about-bio">That is not a coincidence. It is how trust has always worked. The surface changed. The mechanism did not.</p>
+        <p class="about-bio">Most brands responded to AI by producing more content. That is the old game with a new tool.</p>
+        <p class="about-bio">I built The Good Record because the brands that build the right record first will be very hard to displace. Good words follow good works. Authority follows the record.</p>
+        <p class="about-bio">We come from earned media, not data science or SEO. That difference is the whole point.</p>
+        <p class="about-bio about-bio--strong">We are not guessing at this. We are applying what has always worked, in the places that now matter most.</p>
+        <div class="about-cta-block fade-in">
+          <p class="about-cta-label">— LeeAnn Silver, Founder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <p class="section-tag">Start Here</p>
+    <h2 class="cta-headline fade-in">
+      Find out where your<br /><em>record stands today.</em>
+    </h2>
+    <div class="cta-right fade-in">
+      <p class="cta-sub">
+        Fill out the form and we will run a scan of how major AI tools talk about your brand and category. You will see exactly where the record stands and what it would take to strengthen it.
+      </p>
+      <form class="cta-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <input type="email" name="email" placeholder="Work email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <input type="text" name="company" placeholder="Company" required />
+          </div>
+          <div class="form-field">
+            <select name="tier">
+              <option value="" disabled selected>Interested in&hellip;</option>
+              <option value="audit">Authority Audit, I want to see where I stand</option>
+              <option value="foundation">Foundation, I am ready to start building</option>
+              <option value="growth">Growth, I want to move faster</option>
+              <option value="category">Category Leader, I want to own my space (Custom)</option>
+              <option value="unsure">Not sure yet, help me figure it out</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field full">
+          <textarea name="message" placeholder="Tell us your category and your main competitors (optional)" rows="4"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Get My Authority Audit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="#" class="footer-logo">
+        <svg class="logo-icon logo-icon--sm" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><line x1="50" y1="50" x2="50" y2="13" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="82" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="50" y2="87" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="68.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><line x1="50" y1="50" x2="18" y2="31.5" stroke="#c4bfb0" stroke-width="2.5" stroke-linecap="round"/><circle cx="50" cy="13" r="7" fill="#1a2d5a"/><circle cx="82" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="82" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="87" r="7" fill="#1a2d5a"/><circle cx="18" cy="68.5" r="7" fill="#1a2d5a"/><circle cx="18" cy="31.5" r="7" fill="#1a2d5a"/><circle cx="50" cy="50" r="15" fill="#c9a558"/></svg>
+        <span class="logo-wordmark">The Good<em>Record</em></span>
+      </a>
+      <p class="footer-tagline">Build the record AI trusts.</p>
+    </div>
+    <div class="footer-right">
+      <ul class="footer-links">
+        <li><a href="#framework">How It Works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <p class="footer-instagram"><a href="https://instagram.com/thegoodrecord" target="_blank" rel="noopener">@thegoodrecord</a></p>
+      <p class="footer-copy">&copy; 2026 The Good Record. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      try {
+        const response = await fetch('https://formspree.io/f/xojbejyz', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          btn.textContent = 'Message Sent';
+          btn.style.opacity = '0.6';
+          form.reset();
+        } else {
+          btn.textContent = 'Something went wrong. Try again.';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.disabled = false;
+      }
+    }
+  </script>
+
+</body>
+</html>
+
